@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top 10 AI-Powered Side Hustles for 2026</title>
+    
+    <!-- GetResponse Analytics -->
+    <script type="text/javascript">
+        (function(m, o, n, t, e, r, _){
+            m['__GetResponseAnalyticsObject'] = e;m[e] = m[e] || function() {(m[e].q = m[e].q || []).push(arguments)};
+            r = o.createElement(n);_ = o.getElementsByTagName(n)[0];r.async = 1;r.src = t;r.setAttribute('crossorigin', 'use-credentials');_.parentNode .insertBefore(r, _);
+        })(window, document, 'script', 'https://an.gr-wcon.com/script/5aaafca1-efd0-45c6-8c66-d8cdbf8ede8c/ga.js', 'GrTracking');
+    </script>
+    <!-- End GetResponse Analytics -->
+    
     <style>
         * {
             margin: 0;
@@ -236,32 +246,26 @@
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             
-            // IMPORTANT: Replace this URL with your GetResponse form submission URL
-            // To get this:
-            // 1. Go to GetResponse Forms
-            // 2. Create or edit a form
-            // 3. Go to "Publish" tab
-            // 4. Copy the form action URL
-            // 5. Paste it below replacing 'YOUR_GETRESPONSE_FORM_URL'
+            // Track form submission with GetResponse
+            if (typeof GrTracking !== 'undefined') {
+                GrTracking('event', 'form_submit', {
+                    name: name,
+                    email: email
+                });
+            }
             
-            const getResponseURL = 'YOUR_GETRESPONSE_FORM_URL';
-            
-            // For now, just show success message
-            // Once you add your GetResponse URL above, this will actually submit
+            // Show success message
             document.getElementById('leadForm').style.display = 'none';
             document.getElementById('successMessage').style.display = 'block';
             
-            // Uncomment these lines once you add your GetResponse URL:
-            /*
-            fetch(getResponseURL, {
-                method: 'POST',
-                body: new FormData(this)
-            }).then(() => {
-                document.getElementById('leadForm').style.display = 'none';
-                document.getElementById('successMessage').style.display = 'block';
-            });
-            */
+            // Here you would normally send to GetResponse
+            // For now, this tracks the submission
+            console.log('Form submitted:', { name, email });
         });
     </script>
+    
+    <!-- GetResponse Popup Form Code -->
+    <getresponse-form form-id="ff4dfec5-b469-4c8-9c4b-ed8231d1094c" e="1"></getresponse-form>
+    <script src="https://app.getresponse.com/view_webform_v2.js?v=1"></script>
 </body>
 </html>
